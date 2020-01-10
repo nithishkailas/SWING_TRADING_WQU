@@ -32,6 +32,6 @@ The infrastructure consists of 2 classes.
 
 See this link for an example usage of these two classes: 
  
-##### https://github.com/nithishkailas/SWING_TRADING_WQU/examples/portfolio_and_order_usage_example.py
+##### examples/portfolio_and_order_usage_example.py
  
  
