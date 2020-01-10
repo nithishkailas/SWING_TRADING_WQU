@@ -17,3 +17,7 @@ This Project requires OHLCV time series data sampled at 1-minute frequency to ge
  
 The raw data is presented in CSV format as follows: Date, Open, High, Low, Close, and Volume. (*DOHLCV*) 
 
+##### run dataprocessing/get_feature_matrix.py 
+
+This will restructure the raw data into 1minute, 5minute, 15minute, 30minute, 60minute, daily, weekly and Monthly samples and add a detailed set of technical indicators to each timeframe. Then the data is normalized using differnt methods and a List of dataframe is returned corresponding to each 1-minute interval which is abuntant to create strategies and also structured to be inputted to machine learning algorithms.
+
