@@ -1,0 +1,6 @@
+numpy==1.16.3
+pandas==0.24.2
+talib==0.4.17
+sklearn==0.20.3
+matplotlib==0.20.3
+mpl_finance
