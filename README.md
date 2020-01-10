@@ -18,7 +18,9 @@ This Project requires OHLCV time series data sampled at 1-minute frequency to ge
  
 The raw data is presented in CSV format as follows: Date, Open, High, Low, Close, and Volume. (*DOHLCV*) 
 
-##### run dataprocessing/get_feature_matrix.py 
+'''
+ run dataprocessing/get_feature_matrix.py 
+'''
 
 This will restructure the raw data into 1minute, 5minute, 15minute, 30minute, 60minute, daily, weekly and Monthly samples and add a detailed set of technical indicators to each timeframe. Then the data is normalized using differnt methods and a List of dataframe is returned corresponding to each 1-minute interval which is abuntant to create strategies and also structured to be inputted to machine learning algorithms.
 
@@ -27,11 +29,28 @@ This will restructure the raw data into 1minute, 5minute, 15minute, 30minute, 60
 To systematically test the strategies researched and also the ones which are coded as part of this project, this part of the project plan to create a simple yet powerful infrastructure where strategies can be structured with ease and also back-tested on historical and synthetic data. It will take into account Commissions generated as a part of trading so that accurate net profitability of the strategies can be calculated. The infrastructure will generate various statistics for the strategy like hit rate, mean holding period and much more so that the trades in the strategies can be analyzed with respect to a bunch of valuable information and also the strategy as a whole can be evaluated. Any good trading research needs to have its own infrastructure for efficient testing. This project does research on the top of its own custom infrastructure which gives greater flexibility and also provide data selectivity. 
 
 The infrastructure consists of 2 classes.
-##### Portfolio class @ portfolio/portfolio.py
-##### Order Class @ order.order.py
+'''
+Portfolio class @ portfolio/portfolio.py
+Order Class @ order.order.py
+'''
 
 See this link for an example usage of these two classes: 
+'''
+examples/portfolio_and_order_usage_example.py
+'''
+
+#### Citing
+
+If you use Swing_Trading_WQU in your research, please cite Technical analysis of stock charts and Machine Learning infrastructure for Algorithmic Swing Trading(link)
+
+{
+  title={Technical analysis of stock charts and Machine Learning infrastructure for Algorithmic Swing Trading},
+  author={Nithish Kailas R, nithishkailas@gmail.com, WQU, Csaba Pek, pekcsaba89@gmail.com, WQU, Suchul Kwon, ksc901120@naver.com, WQU, and      Abhishek Kumar Rao, Happyrao123@gmail.com, WQU.},
+  year={2020},
  
-##### examples/portfolio_and_order_usage_example.py
- 
+}
+
+#### Team
+
+Swing_Trading_WQU is an open-source project backed by the World Quant University. WorldQuant University is an international not-for-profit advancing global education in data sciences. 
 
