@@ -39,7 +39,8 @@ See this link for an example usage of these two classes:
 examples/portfolio_and_order_usage_example.py
 '''
 
-#### Citing
+### Citing
+----------
 
 If you use Swing_Trading_WQU in your research, please cite Technical analysis of stock charts and Machine Learning infrastructure for Algorithmic Swing Trading(link)
 
@@ -50,7 +51,8 @@ If you use Swing_Trading_WQU in your research, please cite Technical analysis of
  
 }
 
-#### Team
+### Team
+--------
 
 Swing_Trading_WQU is an open-source project backed by the World Quant University. WorldQuant University is an international not-for-profit advancing global education in data sciences. 
 
