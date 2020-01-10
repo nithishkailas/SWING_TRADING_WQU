@@ -10,3 +10,10 @@ This project aims to find a systematic way to approach the work of creating a sh
  #### 1. Technical analysis and feature matrix creation
  #### 2. Creating back-testing infrastructure
  #### 3. Improving strategies using machine learning
+
+### Technical analysis and feature matrix creation
+
+This Project requires OHLCV time series data sampled at 1-minute frequency to get enough patterns for analysis. This project uses 1 minute samples of *DOHLCV data of 150 stocks traded in National Stock Exchange in India (NSE) and also the index Nifty50 from 28-11-2018 to 29-03-2019 as the train data. For higher sampling requirements this project uses the last 5 years End-Of-Day data of the above stocks and index for the train data. It uses the *DOHLCV 1-minute and daily data of same instruments spanning from 01-10-2019 to 11-11-2019 as the test data. 
+ 
+The raw data is presented in CSV format as follows: Date, Open, High, Low, Close, and Volume. (*DOHLCV*) 
+
