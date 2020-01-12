@@ -39,11 +39,11 @@ print(SMA_portfolio.TotalCapital)
 i=sample_data[sample_data.Date == '2018-12-12 14:21:00'].index[0]
 
 while i < len(sample_data.values):
-    print(i)
-    new_data_point = sample_data.loc[i]
-    prev_data_point = sample_data.loc[i-1]
+	print(i)
+	new_data_point = sample_data.loc[i]
+	prev_data_point = sample_data.loc[i-1]
 
-    if prev_data_point.MA_5 < prev_data_point.MA_20 and new_data_point.MA_5>new_data_point.MA_20:
+	if prev_data_point.MA_5 < prev_data_point.MA_20 and new_data_point.MA_5>new_data_point.MA_20:
 		
 		new_data_point_features = features_final.loc[new_data_point.Date].values.reshape(1, -1)
 		
@@ -56,8 +56,7 @@ while i < len(sample_data.values):
 			Long_Stop_Price = new_data_point.Close * 0.99
 			Long_Target_Price = new_data_point.Close * 1.02
 			Long_Quantity = QTY
-			Long_Max_Holding_period = min(new_data_point.Date + datetime.timedelta(hours =2), new_data_point.Date.replace(hour = 15,
-																       minute=15))
+			Long_Max_Holding_period = datetime.datetime.now()
 			Long_Order = Order(SMA_portfolio,new_data_point.symbol,'Long',new_data_point.Date,Long_Entry_price,
 							   Long_Target_Price,Long_Stop_Price,Long_Quantity,Long_Max_Holding_period,5)
 
@@ -71,7 +70,7 @@ while i < len(sample_data.values):
 				trade.max_holding_period = new_data_point.Date
 
 
-    if prev_data_point.MA_5 > prev_data_point.MA_20 and new_data_point.MA_5<new_data_point.MA_20:
+	if prev_data_point.MA_5 > prev_data_point.MA_20 and new_data_point.MA_5<new_data_point.MA_20:
 	
 		new_data_point_features = features_final.loc[new_data_point.Date].values.reshape(1, -1)
 		
@@ -84,8 +83,7 @@ while i < len(sample_data.values):
 			Short_Stop_Price = new_data_point.Close * 1.01
 			Short_Target_Price = new_data_point.Close *0.98
 			Short_Quantity = QTY
-			Short_Max_Holding_period = min(new_data_point.Date + datetime.timedelta(hours =2), new_data_point.Date.replace(hour = 15,
-																       minute=15))
+			Short_Max_Holding_period = datetime.datetime.now()
 			Short_Order = Order(SMA_portfolio,new_data_point.symbol,'Short',new_data_point.Date,Short_Entry_price,
 							   Short_Target_Price,Short_Stop_Price,Short_Quantity,Short_Max_Holding_period,5)
 
@@ -98,9 +96,9 @@ while i < len(sample_data.values):
 			if trade.direction == 'Long':
 				trade.max_holding_period = new_data_point.Date
 
-    SMA_portfolio.tracker(new_data_point)
+	SMA_portfolio.tracker(new_data_point)
 
-    i+=1
+	i+=1
 
 
 print("---------------------------------------------")
