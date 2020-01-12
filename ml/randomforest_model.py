@@ -20,7 +20,7 @@ labels = features_final_filtered['label']
 
 features_final = features_final_filtered.drop('side',axis=1).drop('label',axis=1)
 
-train_features, test_features, train_labels, test_labels = train_test_split(features_final,labels, test_size=0.25, random_state=41), shuffle=False)
+train_features, test_features, train_labels, test_labels = train_test_split(features_final,labels, test_size=0.25, random_state=41, shuffle=False)
 
 for symbol in symbols:
 
@@ -38,7 +38,7 @@ for symbol in symbols:
 
 	features_final = features_final_filtered.drop('side',axis=1).drop('label',axis=1)
 
-	train_feats, test_feats, train_lbls, test_lbls = train_test_split(features_final,labels, test_size=0.25, random_state=41), shuffle=False)
+	train_feats, test_feats, train_lbls, test_lbls = train_test_split(features_final,labels, test_size=0.25, random_state=41, shuffle=False)
 	
 	train_features = train_features.append(train_feats)
 	train_labels = train_labels.append(train_lbls)
