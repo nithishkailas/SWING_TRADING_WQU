@@ -81,7 +81,7 @@ while i < len(sample_data.values):
 			print("Short Entry Signal")
 			Short_Entry_price = new_data_point.Close
 			Short_Stop_Price = new_data_point.Close * 1.01
-			Short_Target_Price = new_data_point.Close -0.98
+			Short_Target_Price = new_data_point.Close *0.98
 			Short_Quantity = QTY
 			Short_Max_Holding_period = min(new_data_point.Date + datetime.timedelta(hours =2), new_data_point.Date.replace(hour = 15,minute =15) )
 			Short_Order = Order(SMA_portfolio,new_data_point.symbol,'Short',new_data_point.Date,Short_Entry_price,
