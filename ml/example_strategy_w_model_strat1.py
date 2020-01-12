@@ -56,7 +56,8 @@ while i < len(sample_data.values):
 			Long_Stop_Price = new_data_point.Close * 0.99
 			Long_Target_Price = new_data_point.Close * 1.02
 			Long_Quantity = QTY
-			Long_Max_Holding_period = datetime.datetime.now()
+			Long_Max_Holding_period = min(new_data_point.Date + datetime.timedelta(hours =2), new_data_point.Date.replace(hour = 15,
+																       minute=15))
 			Long_Order = Order(SMA_portfolio,new_data_point.symbol,'Long',new_data_point.Date,Long_Entry_price,
 							   Long_Target_Price,Long_Stop_Price,Long_Quantity,Long_Max_Holding_period,5)
 
@@ -83,7 +84,8 @@ while i < len(sample_data.values):
 			Short_Stop_Price = new_data_point.Close * 1.01
 			Short_Target_Price = new_data_point.Close *0.98
 			Short_Quantity = QTY
-			Short_Max_Holding_period = min(new_data_point.Date + datetime.timedelta(hours =2), new_data_point.Date.replace(hour = 15,minute =15) )
+			Short_Max_Holding_period = min(new_data_point.Date + datetime.timedelta(hours =2), new_data_point.Date.replace(hour = 15,
+																       minute=15))
 			Short_Order = Order(SMA_portfolio,new_data_point.symbol,'Short',new_data_point.Date,Short_Entry_price,
 							   Short_Target_Price,Short_Stop_Price,Short_Quantity,Short_Max_Holding_period,5)
 
